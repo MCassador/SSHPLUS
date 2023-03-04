@@ -274,9 +274,9 @@ sizemin=$(echo ${#username})
 	exit 1
 }
 sizemax=$(echo ${#username})
-[[ $sizemax -gt 10 ]] && {
+[[ $sizemax -gt 20 ]] && {
 	echo -e "\n${cor1}Você digitou um nome de usuário muito grande"
-	echo -e "${cor1}use no máximo 10 caracteres!${scor}\n"
+	echo -e "${cor1}use no máximo 20 caracteres!${scor}\n"
 	exit 1
 }
 echo -ne "\033[1;32mSenha:\033[1;37m ";read password
@@ -298,7 +298,7 @@ echo -ne "\033[1;32mDias para expirar:\033[1;37m ";read dias
 	echo -e "\n${cor1}Você digitou um número de dias inválido!${scor}\n"
 	exit 1
 }
-[[ $dias -lt 1 ]] && {
+[[ $dias -lt 0 ]] && {
 	echo -e "\n${cor1}O número deve ser maior que zero!${scor}\n"
 	exit 1
 }
